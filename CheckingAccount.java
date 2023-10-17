@@ -11,6 +11,7 @@ public class CheckingAccount extends BankAccount
    {  transactionCount++;
       // ora somma l'importo al saldo 
       super.deposit(amount); 
+      System.out.println("numero transazioni : "+transactionCount);
    }
    
    public void withdraw(double amount) 

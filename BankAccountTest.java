@@ -34,11 +34,11 @@ public class BankAccountTest {
         Bank provaBank = new Bank();
 
         SavingAccount prova1 = new SavingAccount(6000);
-        SavingAccount prova2 = new SavingAccount(3000);
+        SavingAccount prova2 = new SavingAccount(5000);
+        CheckingAccount prova3 = new CheckingAccount(2000);
 
-
-        Bank.addAccount(prova1);  //Funziona
-        Bank.addAccount(prova2);
+     Bank.addAccount(prova1);  //Funziona
+    Bank.addAccount(prova2);
         
         Bank.printAccounts();   //FUNZIONA
         Bank.calcolaTotale();       //FUNZIONA
@@ -46,6 +46,20 @@ public class BankAccountTest {
         Bank.tassaAccount();            //FUNZIONA
 
         Bank.convertiValuta(1, "Cuckcoins"); //Funziona
+
+        prova3.deposit(3000);
+        prova3.deposit(200);
+        prova3.deposit(400);
+
+        prova2.controlloaccount(prova1);
+
+        coin monetaprova1 = new coin( "euro", 1);
+        coin monetaprova2 = new coin("noneuro",1);
+
+        monetaprova2.sonoUguali(monetaprova1);
+
+
+        
     }
 
 

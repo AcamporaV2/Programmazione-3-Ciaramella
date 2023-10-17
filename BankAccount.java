@@ -78,5 +78,20 @@ public class BankAccount {
 
         System.out.println("Il saldo del conto è stato convertito in "+ currency + ": " + nuovoSaldo);
     }
+
+    public boolean controlloaccount(Object account1 )
+    {
+        BankAccount account2 = (BankAccount)account1; //castato come account 2
+        if(this.balance == account2.balance)
+        {
+            System.out.println("muort e mammt");
+            return true;
+        }
+        else
+        {
+            System.out.println("mrow");
+            return false;
+        }
+    }
 }
 
