@@ -1,4 +1,4 @@
-public class coin {
+public class coin implements Interfaccia{
     private double value;
     private String name;
 
@@ -32,4 +32,9 @@ public class coin {
             return false;
         }
    }
+
+   public double getMeasure()
+   {
+    return value;
+   } 
 }
