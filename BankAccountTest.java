@@ -1,5 +1,4 @@
 
-
 public class BankAccountTest {
    /*  public static void main(String[] args) {
         // Creazione di un'istanza di BankAccount
@@ -29,9 +28,9 @@ public class BankAccountTest {
 
 
 
-    public static void main(String args[]){
+   /*  public static void main(String args[]){
 
-        Bank provaBank = new Bank();
+        new Bank();
 
         SavingAccount prova1 = new SavingAccount(6000);
         SavingAccount prova2 = new SavingAccount(5000);
@@ -60,9 +59,22 @@ public class BankAccountTest {
 
 
         
+    } */
+
+    
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(0);
+    
+        double amountUSD = 100.0;
+        double amountEUR = account.convertTo(amountUSD, BankAccount.Currency.EUR);
+        double amountJPY = account.convertTo(amountUSD, BankAccount.Currency.JPY);
+        double amountGBP = account.convertTo(amountUSD, BankAccount.Currency.GBP);
+    
+        System.out.println(amountUSD + " USD = " + amountEUR + " EUR");
+        System.out.println(amountUSD + " USD = " + amountJPY + " JPY");
+        System.out.println(amountUSD + " USD = " + amountGBP + " GBP");
     }
-
-
-
 }
+    
+
 

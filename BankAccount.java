@@ -1,4 +1,5 @@
-public class BankAccount {
+
+public class BankAccount implements Interfaccia, CurrencyConverter{
     private double balance;
     private int accountnumber;
     private static int ultimonumero=0;
@@ -93,5 +94,48 @@ public class BankAccount {
             return false;
         }
     }
+
+
+    public double getMeasure()
+    {
+        return balance;
+    }
+
+    //classe anonima JPYconverter
+    CurrencyConverter JPYconverter = new CurrencyConverter() {
+        @Override
+        public double convert(double amount)
+        {
+            return amount * 139.96;
+        }
+    };
+
+    public class GBPconverter implements CurrencyConverter{
+        @Override
+        public double convert(double amount){
+
+            return amount * 0.85;
+        }
+    }
+    public double convert(double amount)
+    {
+        return amount;
+    }
+    enum Currency {
+        EUR, JPY, GBP
+    }
+    public double convertTo(double amount, Currency currency) {
+        switch (currency) {
+            case EUR:
+                return new EURConverter().convert(amount);
+            case JPY:
+                return JPYconverter.convert(amount);
+            case GBP:
+                return new GBPconverter().convert(amount);
+            default:
+                throw new IllegalArgumentException("Conversione non supportata");
+        }
+    }
+    
 }
 
